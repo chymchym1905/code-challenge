@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Socket.IO Client</title>
+        <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 50%;
+                margin-top: 20px;
+            }
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            th {
+                background-color: #f4f4f4;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Socket.IO Client</h1>
+        <div id="status">Connecting...</div>
+        <div id="Leaderboard"></div>
+        <script>
+            // Connect to the server
+            const socket = io('http://localhost:3001/leaderboard'); // Replace with your server URL and port
+
+            // Listen for connection
+            socket.on('connect', () => {
+                console.log('Connected to server with ID:', socket.id);
+                fetch('http://localhost:3001/api/leaderboard/get/1?start=0&end=9&dir=desc') // Example API
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Received data:', JSON.stringify(data));
+                        renderLeaderboard(JSON.stringify(data.entries));
+                    })
+                    .catch((error) => {
+                        console.error('Error during fetch:', error);
+                        document.getElementById('Leaderboard').innerText = `Error: ${error.message}`;
+                    });
+                document.getElementById('status').innerText = 'Connected to server!';
+            });
+
+            // Listen for disconnection
+            socket.on('disconnect', () => {
+                console.log('Disconnected from server');
+                document.getElementById('status').innerText = 'Disconnected from server.';
+            });
+            // Render leaderboard data into a table
+            function renderLeaderboard(data) {
+                const leaderboardDiv = document.getElementById('Leaderboard');
+
+                // Clear previous leaderboard if it exists
+                leaderboardDiv.innerHTML = '';
+
+                // Create the table
+                const table = document.createElement('table');
+
+                // Add table header
+                const headerRow = document.createElement('tr');
+                const headers = ['User ID', 'Score'];
+                headers.forEach((headerText) => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
+                // Add table rows for leaderboard entries
+                JSON.parse(data).forEach((entry) => {
+                    const row = document.createElement('tr');
+                    const userIdCell = document.createElement('td');
+                    userIdCell.textContent = entry.userid;
+                    const scoreCell = document.createElement('td');
+                    scoreCell.textContent = entry.score;
+
+                    row.appendChild(userIdCell);
+                    row.appendChild(scoreCell);
+                    table.appendChild(row);
+                });
+
+                leaderboardDiv.appendChild(table);
+            }
+
+            // Listen for a custom event
+            socket.on('update', (data) => {
+                console.log('Received leaderboardUpdate:', data);
+                renderLeaderboard(data);
+            });
+        </script>
+    </body>
+</html>

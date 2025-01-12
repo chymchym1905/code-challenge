@@ -1,0 +1,12 @@
+# API Keys and secrets
+
+.env
+
+# Dependency directory
+node_modules
+
+# OS metadata
+.DS_Store
+
+# Ignore built ts files
+dist
