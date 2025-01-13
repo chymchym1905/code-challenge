@@ -51,8 +51,8 @@ const sortedBalances = useMemo(() => {
 ### Problems:
 
 -   `lhsPriority` isn't defined, so i assume it's supposed to be balancePriority
--   sort function doesn't handle the case where priority are equal (assuming priority can be equal)
--   `WalletBalance` object don't have blockchain attribute
+-   sort function doesn't handle the case where priority are equal
+-   `WalletBalance` object don't have `blockchain` property
 -   The filter function will remove all elements of the `balances` collection based on how `getPriority` is implemented.
 
 ## 2. `formattedBalances`
@@ -98,4 +98,3 @@ const rows = sortedBalances.map((balance: FormattedWalletBalance, index: number)
 ### Problem:
 
 -   `sortedBalances` should be `formattedBalances` instead
--   `classes.row` but there's no styles defined?

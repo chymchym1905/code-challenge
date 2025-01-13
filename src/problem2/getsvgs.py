@@ -22,9 +22,8 @@ def write_filenames_to_txt(directory, output_filename):
 
 
 # Example usage
-directory_path = (
-    "I:\Interview\code-challenge\src\problem2\icons"  # Change this to your folder path
-)
-output_file = "output.txt"  # The file where names will be saved
+directory_path = "src/problem2/icons"  # Change this to your folder path
+output_file = "src/problem2/output.txt"  # The file where names will be saved
 
 write_filenames_to_txt(directory_path, output_file)
+# This script used to index all the files in the icons directory
