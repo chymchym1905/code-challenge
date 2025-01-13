@@ -24,7 +24,7 @@ const sum_to_n_d = (n: number): number => {
 };
 
 // Test the functions
-console.log("Formula: ", sum_to_n_a(5));
-console.log("For loop: ", sum_to_n_b(5));
-console.log("Recursion: ", sum_to_n_c(5));
-console.log("High order function: ", sum_to_n_d(5));
+console.log('Formula: ', sum_to_n_a(15));
+console.log('For loop: ', sum_to_n_b(15));
+console.log('Recursion: ', sum_to_n_c(15));
+console.log('High order function: ', sum_to_n_d(15));
