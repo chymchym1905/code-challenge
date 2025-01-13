@@ -42,3 +42,9 @@ The postman collection contains some available HTTP requests in the API. Use thi
 -   Generate db
 -   Run the index.html `http://127.0.0.1:[port]/src/problem5/index.html`
 -   Open more browser windows (optional)
+
+## Notes
+
+Time taken: 2 days
+
+A lot of technologies are new to me, most of the time spent is on researching technologies, planning and skimming docs.

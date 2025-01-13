@@ -62,7 +62,14 @@ Because the dataset is small, there's no need to do data modeling in the scope o
 
 ![Diagram](./execution%20flow.drawio.png)
 
-### 3.3 API endpoints documentation
+### 3.3 Additional features & microservices
+
+-   Request logger
+-   Tests
+-   Incremental user ID
+-   redlock
+
+### 3.4 API endpoints documentation
 
 #### User endpoints
 
@@ -83,3 +90,9 @@ Because the dataset is small, there's no need to do data modeling in the scope o
 |  POST  | `/api/leaderboard/createscore`    | Create an entry on leaderboard <br> **Request header**:<br> - Authorization <br> **Request body**:<br> `{ "leaderboardId*": number, "score*": number }`                                                              |
 |  PUT   | `/api/leaderboard/updatescore`    | Modify score on leaderboard <br> **Request header**:<br> - Authorization <br> **Request body**:<br> `{ "leaderboardId*": number, "score*": number }`                                                                 |
 | DELETE | `/api/leaderboard/removescore`    | Remove a leaderboard entry <br> **Request header**:<br> - Authorization <br> **Request body**:<br> `{ "leaderboardId*": number }`                                                                                    |
+
+## Notes
+
+Time taken: 1 day
+
+I had experience with redis db before but other technologies like websockets are new to me, most of the time spent is on researching technologies, planning and skimming docs.

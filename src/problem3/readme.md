@@ -98,3 +98,5 @@ const rows = sortedBalances.map((balance: FormattedWalletBalance, index: number)
 ### Problem:
 
 -   `sortedBalances` should be `formattedBalances` instead
+
+### Modified code snippet at `index-fixed.tsx`
