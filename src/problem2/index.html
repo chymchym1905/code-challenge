@@ -1,27 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Currency Exchange Form</title>
+        <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/form-field.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/input.css" />
+    </head>
+    <body>
+        <form class="exchange-form" id="currencyExchangeForm">
+            <h2>Currency Exchange</h2>
+            <div class="form-group">
+                <label for="amount">From:</label>
+                <div class="form-child">
+                    <div class="nav">
+                        <div class="select-curr" id="select-curr" title="Select currency" onclick="toggleMenu()">
+                            <img src="./icons/AAVE.svg" alt="" />
+                            <img id="arrow" src="./arrow-dropdown.svg" alt="" />
+                        </div>
+                        <div class="mylist-wrap" id="subMenu">
+                            <div class="mylist">
+                                <p>USD</p>
+                                <p>EUR</p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="amount">To:</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount" required />
+            </div>
+            <button id="submit" type="submit">Convert</button>
+        </form>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
-
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
-</head>
-
-<body>
-
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>

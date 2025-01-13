@@ -1,0 +1,31 @@
+input {
+    border: none; 
+    border-bottom: 1px solid #ffffff3a;
+    outline: none; 
+    transition: border-color 0.3s ease;
+  }
+  input:focus{
+    border-bottom: 1px solid #ffffff;
+  }
+  input::placeholder{
+    color: rgba(192, 192, 192, 0.479);
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  
+  input[type="number"] {
+    padding-right: 30px;
+    background-image: url('path_to_arrow_icon.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
