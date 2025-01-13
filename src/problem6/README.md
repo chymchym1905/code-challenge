@@ -74,7 +74,7 @@ Because the dataset is small, there's no need to do data modeling in the scope o
 | PUT    | `/api/user/update`    | Update user metadata <br> **Request body:** <br> `{ "name": string, "email": string, "password": string, "rankings": {} }`                                                   |
 | DELETE | `/api/user/delete:id` | Delete user                                                                                                                                                                  |
 
-#### Leaderboard enpoints
+#### Leaderboard endpoints
 
 | Method | Leaderboard Endpoint              | Description                                                                                                                                                                                                          |
 | :----: | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

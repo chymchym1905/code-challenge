@@ -7,35 +7,63 @@
         <link rel="stylesheet" type="text/css" href="./styles/style.css" />
         <link rel="stylesheet" type="text/css" href="./styles/form-field.css" />
         <link rel="stylesheet" type="text/css" href="./styles/input.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/button.css" />
+        <link rel="stylesheet" type="text/css" href="./styles/loading.css" />
     </head>
     <body>
         <form class="exchange-form" id="currencyExchangeForm">
             <h2>Currency Exchange</h2>
             <div class="form-group">
-                <label for="amount">From:</label>
+                <label for="amount">From: <span id="curr-name-1">USD</span></label>
                 <div class="form-child">
                     <div class="nav">
-                        <div class="select-curr" id="select-curr" title="Select currency" onclick="toggleMenu()">
-                            <img src="./icons/AAVE.svg" alt="" />
-                            <img id="arrow" src="./arrow-dropdown.svg" alt="" />
+                        <div class="select-curr" id="select-curr" title="Select currency" onclick="toggleMenu(1)">
+                            <img id="curr-1" src="./icons/USD.svg" alt="" />
+                            <img class="arrow" id="arrow-1" src="./arrow-dropdown.svg" alt="" />
                         </div>
-                        <div class="mylist-wrap" id="subMenu">
-                            <div class="mylist">
-                                <p>USD</p>
-                                <p>EUR</p>
-                            </div>
+                        <div class="mylist-wrap" id="subMenu-1">
+                            <div id="mylist-1"></div>
                         </div>
                     </div>
-                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required />
+                    <input
+                        class="amount"
+                        type="number"
+                        id="amount"
+                        name="amount"
+                        placeholder="Enter amount"
+                        onfocus="handleFocus(0)"
+                        onblur="handleFocus(0)"
+                    />
                 </div>
             </div>
+            <div class="splash-button" onclick="swapDirection()"><img src="./arrow-bidirectional.svg" alt="" /></div>
+
             <div class="form-group">
-                <label for="amount">To:</label>
-                <input type="number" id="amount" name="amount" placeholder="Enter amount" required />
+                <label for="amount-2">To: <span id="curr-name-2">ETH</span></label>
+                <div class="form-child">
+                    <div class="nav">
+                        <div class="select-curr" id="select-curr" title="Select currency" onclick="toggleMenu(2)">
+                            <img id="curr-2" src="./icons/ETH.svg" alt="" />
+                            <img class="arrow" id="arrow-2" src="./arrow-dropdown.svg" alt="" />
+                        </div>
+                        <div class="mylist-wrap" id="subMenu-2">
+                            <div id="mylist-2"></div>
+                        </div>
+                    </div>
+                    <input
+                        class="amount"
+                        type="number"
+                        disabled
+                        id="amount-2"
+                        name="amount"
+                        onfocus="handleFocus(1)"
+                        onblur="handleFocus(1)"
+                    />
+                </div>
+                <span class="input-error"></span>
             </div>
             <button id="submit" type="submit">Convert</button>
         </form>
-
         <script src="script.js"></script>
     </body>
 </html>

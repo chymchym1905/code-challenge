@@ -1,92 +1,94 @@
 .form-group {
     width: 100%;
-    margin-bottom: 15px;
-  }
-  .form-child{
+    margin-bottom: 20px;
+}
+.form-child {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 5px 10px;
-  }
-  #amount{
-    color: white;
-    background-color: transparent;
-    padding: 10px;
-    width: 80%;
-    height: 100%;
-    box-sizing: border-box;
-  }
-  
-  label {
+}
+
+.form-child.focus {
+    border: 2px solid #c49412;
+}
+
+.form-child.error {
+    border: 2px solid red;
+}
+
+label {
     color: white;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
-  }
-  
-  
-  #currencyExchangeForm > button {
-    background-color: #007bff;
-    width: 100%;
-    padding: 10px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #currencyExchangeForm > button:hover {
-    background-color: #0056b3;
-  }
-  
-  .nav{
+}
+
+/* *****************************DROP DOWN BUTTON***************************** */
+
+.nav {
     position: relative;
     width: 20%;
     padding: 10px 0px;
-  }
-  
-  #select-curr{
+}
+
+.select-curr {
     border-radius: 10px;
     transition: 0.3s;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: max-content;
-  }
-  #arrow {
-    transition: transform 0.3s ease;
-  }
-  
-  #arrow.rotate {
-    transform: rotate(180deg); 
-  }
-  
-  .select-curr:hover{
+}
+.select-curr:hover {
     cursor: pointer;
-  }
-  
-  /* .select-curr svg {
-    display: block;
-    width: 20px;
-    height: 20px;
-  } */
-  
-  .mylist-wrap{
+}
+
+/* *****************************DROP DOWN ARROW ANCHOR***************************** */
+
+.arrow {
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* *****************************DROP DOWN LIST***************************** */
+
+.mylist-wrap {
     display: flex;
     flex-direction: column;
-    width: 100px;
+    width: 200px;
     left: 0;
-    top:100%;
-    padding: 0px 10px;
+    top: 100%;
+    padding: 5px 15px;
     position: absolute;
     max-height: 0px;
     transition: 0.2s;
     border-radius: 10px;
     overflow: hidden;
     transform: translateX(-10px);
-  }
-  
-  .mylist-wrap.open{
-    max-height: 800px;
-    background-color: rgba(165, 24, 24, 1);
-  }
+}
+
+.mylist-wrap.open {
+    max-height: 400px;
+    background-color: #757575;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    z-index: 99;
+}
+
+.list-item {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.list-item > img {
+    margin-right: 10px;
+}

@@ -1,31 +1,54 @@
 input {
-    border: none; 
-    border-bottom: 1px solid #ffffff3a;
-    outline: none; 
+    border: none;
+    outline: none;
     transition: border-color 0.3s ease;
-  }
-  input:focus{
+    height: 40px;
+    font-size: 16px;
+}
+input:focus {
     border-bottom: 1px solid #ffffff;
-  }
-  input::placeholder{
+}
+
+input::placeholder {
     color: rgba(192, 192, 192, 0.479);
-  }
-  
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
+}
+
+input:disabled {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-  
-  
-  input[type="number"] {
+}
+
+input[type='number'] {
     -moz-appearance: textfield;
-  }
-  
-  
-  input[type="number"] {
-    padding-right: 30px;
-    background-image: url('path_to_arrow_icon.svg');
-    background-position: right center;
-    background-repeat: no-repeat;
-  }
+}
+
+#amount {
+    color: white;
+    background-color: transparent;
+    padding: 5px;
+    width: 80%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ffffff3a;
+}
+
+#amount.error {
+    border-bottom: 1px solid red;
+}
+#amount.error::placeholder {
+    color: red;
+}
+
+#amount-2 {
+    border-bottom: none;
+}
+
+.input-error {
+    color: red;
+    font-size: 16px;
+}

@@ -1,0 +1,36 @@
+#currencyExchangeForm > button {
+    margin-top: 20px;
+    background-color: #c49412;
+    width: 100%;
+    padding: 20px 0px;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#currencyExchangeForm > button:hover {
+    background-color: #9c770f;
+}
+
+.splash-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #c49412;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.splash-button > img {
+    transform: rotate(90deg);
+}
+
+.splash-button:hover {
+    background-color: #9c770f;
+}

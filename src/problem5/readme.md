@@ -32,6 +32,13 @@ Before running this script, you need the NodeJS server running and a redis serve
 
 https://documenter.getpostman.com/view/33953637/2sAYQWKtkE
 
-Simply change the url in collection variable if you have an url
+The postman collection contains some available HTTP requests in the API. Use this to interact with the server. Simply change the url in collection variable if you have an url
 
 ![](postman.png)
+
+## Run the live scoreboard
+
+-   Run the server
+-   Generate db
+-   Run the index.html `http://127.0.0.1:[port]/src/problem5/index.html`
+-   Open more browser windows (optional)
